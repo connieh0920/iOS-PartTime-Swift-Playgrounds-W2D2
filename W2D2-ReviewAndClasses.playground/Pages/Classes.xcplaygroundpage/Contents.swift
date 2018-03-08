@@ -48,22 +48,40 @@ box1.area()
 //: Using the Box class as an example, create a new class called Bicycle. Bicycles should have two `Int` properties, `numberOfGears` and `currentGear` (give them sensible default values).
 //:
 //: Bicycles should also have two functions. `gearUp()` and `gearDown()`, which increase and decrease the value in `currentGear`.
+class Bicycle{
+    var numberOfGears : Double = 0
+    var currentGear: Double = 5
+    
+    func gearUp() -> Double {
+        return currentGear - numberOfGears
+    }
+    
+    func gearDown() -> Double {
+        print("my bike is in the \(myBike.currentGear)rd gear")
+        return numberOfGears - currentGear
+        
+    }
+    
+}
 
 
+//let b = Bicycle()
+//b.numberOfGears = 90
 
 
-
+//let word = "Sentence"
+//word = "something else"
 //: Test your bicycle out by uncommenting the following code:
  
-//var myBike = Bicycle()
+var myBike = Bicycle()
 //
-//myBike.numberOfGears = 16 // upgrade!
-//myBike.gearUp()
-//myBike.gearUp()
-//myBike.gearDown()
-//myBike.gearUp()
+myBike.numberOfGears = 16 // upgrade!
+myBike.gearUp()
+myBike.gearUp()
+myBike.gearDown()
+myBike.gearUp()
 //
-//print("my bike is in the \(myBike.currentGear)rd gear")
+print("my bike is in the \(myBike.currentGear)rd gear")
 
 
 //: ## Challenge 2
@@ -78,12 +96,23 @@ box1.area()
 //:
 //: To fix this, we need what's called a custom init method. Here's an example of a class with a custom init method
 
+
+// let only can define once!!!!!! var can always redefine//
+
+
+
+
+
 class LightBulb {
     let watts: Double
     var hoursOn: Double = 0
     
     init(wattage: Double) {
         watts = wattage
+    }
+    init(sentence: String){
+        watts = 9
+        print("\(watts)")
     }
 }
 
@@ -94,9 +123,12 @@ class LightBulb {
 
 var brightBulb = LightBulb(wattage: 100)
 var dimBulb = LightBulb(wattage: 20)
-
-dimBulb.watts
+LightBulb.init(sentence: "test")
+var test = LightBulb.init(sentence: "Test1")
+test.watts
 brightBulb.watts
+dimBulb.watts
+
 
 //: **Whew**, that was a lot! But now that we have all this background, we can do the challenge! Use the idea of init methods and constants on our bicycle class. We'll need to do the following:
 //:
@@ -106,7 +138,42 @@ brightBulb.watts
 //: 4. The init method sets numberOfGears to the value in `gears`
 //:
 //: Hint: don't forget to supply a number of gears when you create your bicycles!
+class Bicycle2{
+    let numberOfGears : Double
+    var currentGear: Double
+    
+    func gearUp() -> Double {
+        print("my bike test")
+        currentGear = currentGear + 1
+        return currentGear
+    }
+    
+    func gearDown() -> Double {
+        print("my bike is in the \(myBike.currentGear)rd gear")
+        currentGear = currentGear - 1
+        return currentGear
+        
+    }
+    init(gear:Double) {
+        numberOfGears = gear
+        currentGear = 5
+    }
+    
+}
 
+var Bicylces2test = Bicycle2(gear: 20)
+
+Bicylces2test.gearUp()
+print("My current gear \(Bicylces2test.currentGear)")
+
+Bicylces2test.gearUp()
+print("My current gear \(Bicylces2test.currentGear)")
+
+Bicylces2test.gearUp()
+print("My current gear \(Bicylces2test.currentGear)")
+
+Bicylces2test.gearDown()
+print("My current gear \(Bicylces2test.currentGear)")
 
 
 

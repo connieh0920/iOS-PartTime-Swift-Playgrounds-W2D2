@@ -8,6 +8,7 @@
 //: ## Variables
 //: In swift, you create variables like this:
 
+
 var greeting = "Hello"
 var count = 10
 var mph = 87.9
@@ -26,20 +27,27 @@ mph + 0.1
 //:
 //: Change the value in `mph` to be equal to 90, use the assignment operator `=`.
 
+mph = 90
+
+
+
 
 
 
 //: ### Challenge 2
 //:
 //: The `greeting` variable contains a greeting. Change the value in `greeting` to include your name. i.e. if greeting contained "Hello" and your name is "Danny", then it should now contain "Hello, Danny".
+var name = "Danny"
+greeting = "Aloha"
+var greetingsentence = "\(greeting),\(name)"
 
-greeting = "Hello"
 
-
-
-
+//greeting = "Hello, \(name)"
 //: Note: Make sure to do this in such a way that changing the value of `greeting` to "Aloha" changes the value here to be "Aloha, Danny"
 
+
+
+greetingsentence
 
 
 //: ## Types
@@ -49,10 +57,10 @@ greeting = "Hello"
 //: What type are `bicycleCount`, and `isGood`?
 
 var bicycleCount = 10
-// bicycleCount type is:
+// bicycleCount type is: Int
 
 var isGood = true
-// isGood's type is:
+// isGood's type is: Booleans
 
 
 //: Swift infers the type of a variable based on the initial value. This is mostly useful, but sometimes we want to change the inferred type.
